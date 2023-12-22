@@ -9,12 +9,12 @@ class CreateTasksTable extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('task_name');
+            $table->string('task_name')->nullable();
             $table->text('description')->nullable();
             $table->string('image_path')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->date('deadline_date');
-            $table->time('deadline_time');
+            $table->date('deadline_date')->nullable();;
+            $table->time('deadline_time')->nullable();;
             $table->timestamps();
 
 

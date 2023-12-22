@@ -33,13 +33,13 @@ class UserRequest extends FormRequest
                 'lastname'  => 'required|string|max:255',
                 'email'     => 'required|string|email|unique:App\Models\User,email|max:255',
                 'password'  => 'required|min:8|confirmed',
-                // 'image'     => 'nullable|image|mimes:jpg,gif,png,bmp|max:5120',
+                'image'     => 'nullable|image|mimes:jpg,gif,png,bmp|max:5120',
             ];
         }
         else if( request()->routeIs('user.update') ){
             return [
                 'name'      => 'required|string|max:255',
-                // 'image'     => 'nullable|image|mimes:jpg,gif,png,bmp|max:5120',
+                'image'     => 'nullable|image|mimes:jpg,gif,png,bmp|max:5120',
             ];
         }
         else if( request()->routeIs('user.email') ){
@@ -54,7 +54,7 @@ class UserRequest extends FormRequest
         }
         else if( request()->routeIs('user.image') || request()->routeIs('profile.image') ){
             return [
-                'image'     => 'required|image|mimes:jpg,bmp,png|max:2048',
+                'image'     => 'required|image|mimes:jpg,bmp,png|max:5000',
             ];
         }
     }
